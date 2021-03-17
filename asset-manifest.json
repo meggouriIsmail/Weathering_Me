@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Weathering_Me/static/css/main.d8bb817d.chunk.css",
+    "main.js": "/Weathering_Me/static/js/main.0be23cb5.chunk.js",
+    "main.js.map": "/Weathering_Me/static/js/main.0be23cb5.chunk.js.map",
+    "runtime-main.js": "/Weathering_Me/static/js/runtime-main.dcf8cdf2.js",
+    "runtime-main.js.map": "/Weathering_Me/static/js/runtime-main.dcf8cdf2.js.map",
+    "static/js/2.a50fc3e0.chunk.js": "/Weathering_Me/static/js/2.a50fc3e0.chunk.js",
+    "static/js/2.a50fc3e0.chunk.js.map": "/Weathering_Me/static/js/2.a50fc3e0.chunk.js.map",
+    "index.html": "/Weathering_Me/index.html",
+    "static/css/main.d8bb817d.chunk.css.map": "/Weathering_Me/static/css/main.d8bb817d.chunk.css.map",
+    "static/js/2.a50fc3e0.chunk.js.LICENSE.txt": "/Weathering_Me/static/js/2.a50fc3e0.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Weathering_Me/static/media/ara-3601194_1920.e3f14c47.jpg",
+    "static/media/searchIcon.715159a9.svg": "/Weathering_Me/static/media/searchIcon.715159a9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dcf8cdf2.js",
+    "static/js/2.a50fc3e0.chunk.js",
+    "static/css/main.d8bb817d.chunk.css",
+    "static/js/main.0be23cb5.chunk.js"
+  ]
+}
