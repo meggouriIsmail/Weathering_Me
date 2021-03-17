@@ -10,7 +10,7 @@ const Section = (props) => {
     const {cityCountry, icon, temp, description, Info} = props;
     const iconPic = `http://openweathermap.org/img/wn/${icon}@4x.png`;
     return (
-        <section className="blur">
+        <section className="blur page">
             <div className="title">WEATHERING ME APP</div>
             <div className="info">
                 <h1 className="city">{cityCountry}</h1>
