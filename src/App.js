@@ -2,7 +2,7 @@ import React from 'react';
 import Section from './WeatherComponent';
 import Form from './Form';
 
-const URI = "http://api.openweathermap.org/data/2.5/";
+const URI = "https://api.openweathermap.org/data/2.5/";
 const PARAMS = {
   weather: "weather?q=",
   exclude: "&exclude=hourly",
