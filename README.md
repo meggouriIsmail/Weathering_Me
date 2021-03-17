@@ -20,3 +20,5 @@ You will also see any lint errors in the console.
 # This is a weather app using react
 
 you will need an api_key from https://openweathermap.org/api
+
+# To view demo visit https://meggouriismail.github.io/Weathering_Me/
