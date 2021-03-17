@@ -1,13 +1,242 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+html {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/ara-3601194_1920.jpg') ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #f9fcff;
+}
+.blur {
+    opacity: 0;
+}
+.fade_in {
+    animation: fadeIn .5s forwards ease-in-out;
+}
+.app {
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+.app::after {
+    content:'';
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(#9696,#76ffe8);
+    z-index: -1;
+}
+.title {
+    padding: .5em 0;
+    font-size: 16px;
+}
+.search-box {
+    position: absolute;
+    height: 40px;
+    width: 80%;
+    border-radius: 50px;
+    background: #fff;
+    padding: 0 10px;
+    display: flex;
+    align-items: inherit;
+    box-shadow: 3px 3px 10px 3px #00000023;
+    z-index: 10;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+.search-btn {
+    border: none;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+}
+.search-btn:focus {
+    outline: none;
+}
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #92919198;
+    background: transparent;
+}
+input[type="text"]:focus {
+    outline: none;
+    background: transparent;
+}
+input[type="text"]::placeholder {
+    color: #8080803f;
+}
+.info {
+    margin-top: 5em;
+    padding: 1em;
+}
+.city {
+    letter-spacing: 1.3px;
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+.date {
+    font-size: 19px;
+}
+.forcast {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.tempeture-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    align-self: center;
+}
+.cloud {
+    float: left;
+    padding-right: 20px;
+}
+.moreInf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 45%;
+    height: 100%;
+    background: #ffffff21;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+.temp {
+    font-size: 64px;
+}
+.description {
+    font-size: 24px;
+}
+.col {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    width: 100%;
+    height: 50%;
+}
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+}
+.row {
+    padding: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.next-week {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.icon-cloud {
+    width: 70px;
+}
+.next-week {
+    background: #ffffff21;
+    border-radius: 10px;
+    height: 160px;
+    width: 120px;
+    margin: 0 10px;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9696;
+    border-radius: 6px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes search-animation {
+    0% {
+        top: 50%;
+    }
+    100% {
+        top: 5%;
+    }
+}
+/* mobile ipad small screens */
+@media only screen and (max-width:600px){
+    body {
+        background-position: left;
+    }
+    .app {
+        height: auto;
+    }
+    .app::after {
+        display: none;
+    }
+    .search-box {
+        width: 80%;
+    }
+    .forcast {
+        flex-wrap: wrap;
+    }
+    .tempeture-block {
+        width: 100%;
+    }
+    .cloud {
+        padding: 0;
+        width: 150px;
+        height: 100%;
+    }
+    .moreInf {
+        display: none;
+    }
+}
+
+.error {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    height: 100px;
+    width: 400px;
+    background-color: #00000034;
+    text-align: center;
+    padding-top: 30px;
+    z-index: 10;
 }
