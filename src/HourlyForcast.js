@@ -10,7 +10,7 @@ function HourlyForcast(props) {
                         <p>{date.getMonth()+1}.{date.getDate()}</p>
                         <p>{date.getHours()}:{date.getMinutes()}0</p>
                     </div>
-                    <img className="icon-cloud" src={"http://openweathermap.org/img/wn/"+item.weather[0].icon+"@2x.png"} alt="pic" />
+                    <img className="icon-cloud" src={"https://openweathermap.org/img/wn/"+item.weather[0].icon+"@2x.png"} alt="pic" />
                     <p>{parseInt(item.temp)}°</p>
                 </div>
             );

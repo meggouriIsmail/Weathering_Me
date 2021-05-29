@@ -8,7 +8,7 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 
 const Section = (props) => {
     const {cityCountry, icon, temp, description, Info} = props;
-    const iconPic = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+    const iconPic = `https://openweathermap.org/img/wn/${icon}@4x.png`;
     return (
         <section className="blur page">
             <div className="title">WEATHERING ME APP</div>
