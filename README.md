@@ -21,4 +21,4 @@ You will also see any lint errors in the console.
 
 you will need an api_key from https://openweathermap.org/api
 
-# To view demo visit https://meggouriismail.github.io/Weathering_Me/
+# To view demo visit https://weather.swayli.tech

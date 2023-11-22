@@ -6,11 +6,11 @@ const URI = "https://api.openweathermap.org/data/2.5/";
 const PARAMS = {
   weather: "weather?q=",
   exclude: "&exclude=hourly",
-  unit   : "&units=metric",
+  unit: "&units=metric",
   onecall: "onecall?",
-  lat    : "lat=",
-  lon    : "&lon=",
-  id     : "&appid="
+  lat: "lat=",
+  lon: "&lon=",
+  id: "&appid="
 };
 const API_KEY = PARAMS.id + process.env.REACT_APP_API_KEY;
 
@@ -29,30 +29,30 @@ class App extends React.Component {
       coords: undefined,
       hourly: undefined,
       description: "",
-      timezone:undefined,
-      error:false
+      timezone: undefined,
+      error: false
     };
   }
-  
+
   getWeather = async (e) => {
-    
+
     e.preventDefault();
     e.target.style.animation = "search-animation 1s ease-in-out forwards";
-    
+
     const city = e.target.elements.city.value;
-    if(city){
+    if (city) {
       const apiCall = await fetch(URI + PARAMS.weather + city + PARAMS.unit + API_KEY);
-      
+
       const response = await apiCall.json();
 
       const sec = document.querySelector('section');
-    
-      if(response.cod===200){
-        if(sec.classList.contains('blur')){
+
+      if (response.cod === 200) {
+        if (sec.classList.contains('blur')) {
           sec.classList.remove('blur');
         }
         sec.classList.add('fade_in');
-console.log(response);
+        console.log(response);
         this.setState({
           cityCountry: `${response.name}, ${response.sys.country}`,
           main: response.main,
@@ -65,7 +65,7 @@ console.log(response);
           wind: response.wind,
           coords: response.coord,
           error: false
-        });  
+        });
       }
       else {
         sec.classList.add('blur');
@@ -73,26 +73,26 @@ console.log(response);
 
         this.setState({
           error: true
-        });  
+        });
       }
-      if(this.state.coords){
-        const {lon, lat} = this.state.coords;
+      if (this.state.coords) {
+        const { lon, lat } = this.state.coords;
         const apiCall2 = await fetch(URI + PARAMS.onecall + PARAMS.lat + lat + PARAMS.lon + lon + PARAMS.unit + API_KEY);
 
         const res = await apiCall2.json();
         console.log(res.timezone);
         let arr = [];
-        
+
         res.hourly.forEach(data => {
           arr.push(data);
         });
 
         this.setState({
-          hourly: arr,  
+          hourly: arr,
         })
-        
+
         this.setState({
-          timezone: res.timezone,  
+          timezone: res.timezone,
         })
       }
 
@@ -105,12 +105,12 @@ console.log(response);
     }
   }
 
-  render() { 
+  render() {
     return (
       <div>
-        <div className="title">WEATHERING ME</div>
+        <div className="title">weathering me</div>
         <Form loadWeather={this.getWeather} error={this.state.error} />
-        <Section 
+        <Section
           cityCountry={this.state.cityCountry}
           icon={this.state.icon}
           temp={this.state.temp}
@@ -124,7 +124,7 @@ console.log(response);
           coords={this.state.coords}
           Info={this.state.hourly}
         />
-        <div className="copy-right">Copyright &copy;&nbsp;<a href='https://me.swayli.tech' target='_'>Swayli.tech</a>&nbsp;{new Date().getFullYear()}</div>
+        <div className="copy-right">Copyright &copy;&nbsp;<a href='https://me.swayli.tech' target='_' style={{ fontWeight: "bold" }}>Swayli.tech</a>&nbsp;{new Date().getFullYear()}</div>
       </div>
     );
   }
