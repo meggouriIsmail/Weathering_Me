@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('assets/ara-3601194_1920.jpg') ;
+    background-image: url('assets/hummingbird.jpg') ;
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 .fade_in {
@@ -43,9 +43,9 @@ body {
     padding: 0;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background-image: linear-gradient(#9696,#76ffe8);
+    background-image: linear-gradient(#9966998e,#210a21);
     z-index: -1;
 }
 .title {
@@ -75,6 +75,7 @@ body {
 }
 .search-btn:focus {
     outline: none;
+    background-color: #fff;
 }
 .search-box input {
     width: 100%;
@@ -207,13 +208,13 @@ input[type="text"]::placeholder {
 /* mobile ipad small screens */
 @media only screen and (max-width:600px){
     body {
-        background-position: left;
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        color: #f9fcff;
     }
     .app, .page {
         height: auto;
-    }
-    .app::after {
-        display: none;
     }
     .search-box {
         width: 80%;
@@ -232,6 +233,10 @@ input[type="text"]::placeholder {
     .moreInf {
         display: none;
     }
+    .error {
+        height: 120px;
+        width: 100%;
+    }
 }
 
 .error {
@@ -240,10 +245,10 @@ input[type="text"]::placeholder {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    height: 100px;
+    height: 120px;
     width: 400px;
     background-color: #00000034;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 35px;
     z-index: 10;
 }

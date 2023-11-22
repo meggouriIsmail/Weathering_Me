@@ -11,7 +11,6 @@ const Section = (props) => {
     const iconPic = `https://openweathermap.org/img/wn/${icon}@4x.png`;
     return (
         <section className="blur page">
-            <div className="title">WEATHERING ME APP</div>
             <div className="info">
                 <h1 className="city">{cityCountry}</h1>
                 <p className="date">{days[d.getDay()] +" "+ d.getDate() +" "+ months[d.getMonth()]}</p>

@@ -104,6 +104,7 @@ class App extends React.Component {
   render() { 
     return (
       <div>
+        <div className="title">WEATHERING ME</div>
         <Form loadWeather={this.getWeather} error={this.state.error} />
         <Section 
           cityCountry={this.state.cityCountry}
