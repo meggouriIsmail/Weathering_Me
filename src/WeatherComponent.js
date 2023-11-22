@@ -19,7 +19,7 @@ const Section = (props) => {
                 <div className="tempeture-block">
                     <img className="cloud" src={iconPic} alt="" />
                     <div>
-                        <h1 className="temp">{Math.floor(temp)}</h1>
+                        <h1 className="temp">{Math.floor(temp)}°</h1>
                         <p className="description">{description}</p>
                     </div>
                 </div>
@@ -28,6 +28,7 @@ const Section = (props) => {
                     sys={props.sys}
                     wind={props.wind}
                     coords={props.coord}
+                    timezone={props.timezone}
                 />
             </div>
             <h1 style={{ paddingLeft: "1em"  }}>Forecast</h1>

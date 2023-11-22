@@ -29,6 +29,7 @@ class App extends React.Component {
       coords: undefined,
       hourly: undefined,
       description: "",
+      timezone:undefined,
       error:false
     };
   }
@@ -47,12 +48,11 @@ class App extends React.Component {
       const sec = document.querySelector('section');
     
       if(response.cod===200){
-        
         if(sec.classList.contains('blur')){
           sec.classList.remove('blur');
         }
         sec.classList.add('fade_in');
-
+console.log(response);
         this.setState({
           cityCountry: `${response.name}, ${response.sys.country}`,
           main: response.main,
@@ -80,7 +80,7 @@ class App extends React.Component {
         const apiCall2 = await fetch(URI + PARAMS.onecall + PARAMS.lat + lat + PARAMS.lon + lon + PARAMS.unit + API_KEY);
 
         const res = await apiCall2.json();
-        
+        console.log(res.timezone);
         let arr = [];
         
         res.hourly.forEach(data => {
@@ -89,6 +89,10 @@ class App extends React.Component {
 
         this.setState({
           hourly: arr,  
+        })
+        
+        this.setState({
+          timezone: res.timezone,  
         })
       }
 
@@ -115,10 +119,12 @@ class App extends React.Component {
           description={this.state.description}
           main={this.state.main}
           sys={this.state.sys}
+          timezone={this.state.timezone}
           wind={this.state.wind}
           coords={this.state.coords}
           Info={this.state.hourly}
         />
+        <div className="copy-right">Copyright &copy;&nbsp;<a href='https://me.swayli.tech' target='_'>Swayli.tech</a>&nbsp;{new Date().getFullYear()}</div>
       </div>
     );
   }

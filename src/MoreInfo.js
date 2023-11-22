@@ -1,10 +1,19 @@
 const MoreInfo = (props) => {
-    const {wind, sys, main} = props;
+    const {wind, sys, main, timezone} = props;
     var sunrise, sunset;
-
-    if(sys){
-        sunrise = new Date((sys.sunrise) * 1000);
-        sunset = new Date(sys.sunset * 1000);
+    
+    if (sys) {
+        // Convert UTC timestamps to local time in the specified time zone
+        const options = {
+            timeZone: timezone, // Replace with the actual time zone of the city
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: false,
+        };
+    
+         sunrise = new Date(sys.sunrise * 1000).toLocaleTimeString(sys.country, options);
+         sunset = new Date(sys.sunset * 1000).toLocaleTimeString(sys.country, options);
     }
 
     return (
@@ -19,7 +28,7 @@ const MoreInfo = (props) => {
                     <p>Wind</p>
                 </div>
                 <div className="cell">
-                    <p>{sunrise ? sunrise.getHours() : 0}:{sunrise ? sunrise.getMinutes() : 0}</p>
+                    <p>{sunrise ? sunrise.substring(0,sunrise.length-3) : "00:00"}</p>
                     <p>Sunrise</p>
                 </div>
                 </div>
@@ -33,7 +42,7 @@ const MoreInfo = (props) => {
                     <p>Humidity</p>
                 </div>
                 <div className="cell">
-                    <p>{sunset ? sunset.getHours() : 0}:{sunset ? sunset.getMinutes() : 0}</p>
+                    <p>{sunset ? sunset.substring(0,sunset.length-3) : "00:00"}</p>
                     <p>Sunset</p>
                 </div>
             </div>
